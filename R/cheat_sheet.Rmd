@@ -1,5 +1,5 @@
 ---
-title: CSM Code Clinic - Mini tutorial
+title: SCC tutorial series
 subtitle: Exploratory analysis of 16S rRNA gene amplicon sequencing data
 author: "Kiana A. West"
 date: "`r Sys.Date()`"
