@@ -1,0 +1,51 @@
+---
+title: CSM Code Clinic - Mini tutorial
+subtitle: Exploratory analysis of 16S rRNA gene amplicon sequencing data
+author: "Kiana A. West"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    theme: cerulean
+---
+
+***
+
+Cheat sheet for important functions used in the tutorial   
+Packages: `phyloseq`, `DESeq2` 
+   
+***
+
+### Accessing data in phyloseq object (`ps_obj`)
+* `sample_data(ps_obj)` - accessing the metadata - need to convert to `data.frame`
+* `sample_variables(ps_obj)` - list variable names (column names) from the metadata
+* `otu_table(ps_obj)` - get abundance table - need to convert to `matrix`
+* `tax_table(ps_obj)` - get taxonomy assignments - need to convert to `data.frame`
+* `sample_sums(ps_obj)` - get sequencing depth for each sample
+
+### 16S data manipulation
+* `subset_samples(ps_obj, expr)` - use an expression to keep only specific samples in the data
+    * Example `expr` - `Gender == "Male"`
+* `filter_taxa(ps_obj, fxn, prune = TRUE)` - use a function to keep taxa that meet a condition
+    * Example `fxn` - `function(x) {sum(x) > 5}` will keep taxa with at least 5 counts and remove the rest
+  
+### Normalisation
+* `rarefy_even_depth(ps_obj)` - subsampling for uniform sequencing depth across samples
+* `transform_sample_counts(ps_obj, function)`
+    * Example `function` - `function(x) {x/sum(x)}` for relative abundance
+    * Example `function` - `function(x) {log(x+1)}` for log transformation
+
+### Diversity
+* `estimate_richness(ps_obj, measures)` - alpha-diversity
+* `phyloseq::distance(ps_obj, method)` - beta-diversity
+    * `ordinate()` - ordination of distance matrix (i.e. PCoA or NMDS)
+    * `plot_ordination()`
+    * `adonis()` - test group differences in beta-diversity
+    * `betadisper()` - calculate group dispersions
+    * `permutest()` - permutation test to check group dispersions
+  
+### Differential abundance
+* `phyloseq_to_deseq2(ps_obj, design)` - convert phyloseq object to DESeq2 object
+* `DESeq(ds_obj)` - run DESeq2
+* `results(ds_obj)` - get DESeq2 results
+* `counts(ds_obj)` - get raw or normalised abundance table
