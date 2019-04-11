@@ -1,3 +1,3 @@
-### CSM code clinic - mini tutorials
+### Tutorials
 ***
-This repository contains materials for the CSM/STRATiGRAD code clinics
+* [Exploratory analysis of 16S rRNA gene amplicon sequencing data](https://ka-west.github.io/CSM-tutorials/tutorials/16S_exploratory.html)
