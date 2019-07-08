@@ -11,7 +11,7 @@ output:
 
 ***
 
-Download the fabricated metadata [here](URL TO FILE)
+Download the fabricated metadata [here](https://ka-west.github.io/SCC-tutorials/R/metadata.csv)
 
 ***
    
