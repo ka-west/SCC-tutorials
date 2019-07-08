@@ -1,0 +1,414 @@
+---
+title: SCC tutorial series
+subtitle: Tidying metadata with tidyverse
+author: "Kiana A. West"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    theme: cerulean
+---
+
+***
+
+Download the fabricated metadata [here](URL TO FILE)
+
+***
+   
+Metadata can be messy! [Tidyverse packages](https://www.tidyverse.org/packages/) offer many functions that are useful for making metadata nice and neat as well as getting your data into the perfect format for your analysis.  
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, fig.align="center")
+```
+
+### Setup
+
+Let's start by loading the core tidyverse packages. This includes:   
+* `readr` for data import  
+* `tibble` for tibbles ("tidy" data.frames)  
+* `dplyr` for data manipulation  
+* `stringr` for strings  
+...and a few other packages that won't be covered in this tutorial.
+
+```{r setup, message=FALSE, results='hide'}
+
+library(tidyverse)
+
+```
+
+### Data import
+
+Import the metadata using the package `readr`.
+
+```{r}
+
+metadata <- read_csv("metadata.csv")
+
+```
+
+Let's check what the data looks like.
+
+```{r}
+
+head(metadata)
+
+```
+
+You'll notice that the data imported as a tibble. A tibble is basically the tidyverse version of a data.frame. Read more [here](https://r4ds.had.co.nz/tibbles.html). The first column is `PatientID` so we can assume rows are individuals and by the column names, we can tell that columns are variables. There are some spaces in the column names. Spaces should be avoided in any variable names. We can fix this by using the function `dplyr::as_tibble` and setting the argument `.name_repair = "universal"`.
+
+```{r}
+
+metadata <- as_tibble(metadata, .name_repair = "universal")
+
+```
+
+Now we have syntactically valid column names. This just means names without spaces, special characters (`.` and `_` are allowed) and that aren't already reserved for something else. Type `?make.names` in your console for more information about syntactically valid names.  
+
+You may also want to change some column names. This can be done with `dplyr::rename()` where `new_colname = old_colname`.
+
+```{r}
+
+metadata <- rename(metadata,
+                   Treatment_center = Center,
+                   Drinks_coffee = Coffee)
+
+```
+
+If you would like to keep certain columns and get rid of the rest, use `dplyr::select()`. More information [here](https://dplyr.tidyverse.org/reference/select.html).
+
+### Tidy coding with pipes
+
+Before we go any further, let's introduce pipes into our code. The pipe operator (`%>%`) allows us to chain commands together while maintaining readable code. For example, the last command we used can also be written like this...
+
+```{r, eval=FALSE}
+
+metadata <- metadata %>% rename(Treatment_center = Center,
+                                Drinks_coffee = Coffee)
+
+```
+
+...where the object that we want to start with is on the left of the `%>%` and it is piped into the function on the right of the `%>%`. If we want to chain commands together to do everything in one go, it would look like this:
+
+```{r}
+
+metadata <- "metadata.csv" %>% 
+  read_csv() %>%
+  as_tibble(.name_repair = "universal") %>% 
+  rename(Treatment_center = Center,
+         Drinks_coffee = Coffee)
+
+```
+
+More information on piping can be found [here](https://magrittr.tidyverse.org/).
+
+### Check variable classes
+
+Let's check the variable classes now.
+
+```{r}
+
+sapply(metadata, class)
+
+```
+
+The import functions are pretty good at guessing what the class of each variable should be, but it's not always possible. We want to make sure any categorical variables are "character". Here is a major difference between tidyverse and base R import functions. Base R will import these columns as factors by default. This is usually not desirable and tidyverse functions avoid this behavior.  
+
+If you need a quick refresher on data types in R, check out the [Software Carpentry lesson](http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/index.html).  
+
+Our numerical variables should be class "numeric", but BMI was read in as a character. Let's take a look.  
+
+```{r}
+
+metadata$BMI
+
+```
+
+Some individuals do not have a measurement for BMI, but since this was recorded in a string instead of `NA`, the entire column was converted to a character vector. We can use the function `dplyr::mutate()` to transform a variable. By keeping the column name "BMI", we overwrite the existing data in that column.
+
+```{r}
+
+metadata_formatted <- metadata %>%
+  mutate(BMI = as.numeric(BMI))
+
+metadata_formatted$BMI
+
+```
+
+Now the strings are `NA` and the rest of the values are numbers.
+
+In some cases, we might want a variable to be represented as a factor. One example in this data is `Group`. Let's look at all possible values of this variable.
+
+```{r}
+
+unique(metadata$Group)
+
+```
+
+Disease severity ranges from none to severe, so let's convert it to a factor. `mutate()` can actually transform multiple columns at once, so we can add a second variable into the previous code.   
+
+```{r}
+
+metadata_formatted <- metadata %>%
+  mutate(BMI = as.numeric(BMI), 
+         Group = factor(Group,
+                        levels = c("Control",
+                                   "Mild",
+                                   "Severe")))
+
+```
+
+Let's check...
+
+```{r}
+
+unique(metadata_formatted$Group)
+
+```
+
+Now the variable `Group` has levels. This will also ensure that the groups always appear in a specific order in plots. `Average.Exercise` can also be factored. 
+
+```{r}
+
+unique(metadata_formatted$Average.Exercise)
+
+```
+
+Levels of exercise vary from none to a little to a lot. Let's add a third variable into the previous code.  
+
+```{r}
+
+metadata_formatted <- metadata %>%
+  mutate(BMI = as.numeric(BMI),
+         Group = factor(Group,
+                        levels = c("Control",
+                                   "Mild",
+                                   "Severe")),
+         Average.Exercise = factor(Average.Exercise,
+                                   levels = c("none",
+                                              "less than 1 day per week",
+                                              "1-2 days per week",
+                                              "3 or more days per week")))
+
+```
+
+### Check the data
+
+Since we're dealing with patient metadata, let's make sure there is only one row per patient. `dplyr::n_distinct` will count the number of unique values in a column.
+
+```{r}
+
+n_distinct(metadata_formatted$PatientID)
+
+```
+
+There are 150 unique patients for 150 rows, so nothing to fix here.
+
+Let's see how many patients are in each group and what the gender distributions are.
+
+```{r}
+
+table(metadata_formatted$Group, metadata_formatted$Gender)
+
+```
+
+Let's also check the ages and BMIs.
+
+```{r}
+
+summary(metadata_formatted$Age)
+summary(metadata_formatted$BMI)
+
+```
+
+It's important to make sure your data matches what you expect based on the study design.
+
+### Make new variables from existing ones
+
+Using the function `mutate()`, we can also make new variables from existing ones. Let's say we want to categorize individuals by BMI. We saw that these individuals have BMIs between 18.54 and 29.85, so they can be classified as normal weight and overweight in a new column "BMI_category".
+
+```{r}
+
+metadata_formatted <- metadata_formatted %>%
+  mutate(BMI_category = ifelse(test = BMI >= 25, yes = "Overweight", no = "Normal weight"))
+
+```
+
+We can also categorize the individuals by their diets. Let's add to the previous code. We will use the function `case_when()` to label individuals that meet some criteria.
+
+```{r}
+
+metadata_formatted <- metadata_formatted %>%
+  mutate(BMI_category = ifelse(test = BMI >= 25, yes = "Overweight", no = "Normal weight"),
+         Diet = case_when(Vegetarian == "yes" & Vegan == "no" & Eats.Meat == "no" ~ "Vegetarian",
+                          Vegan == "yes" & Vegetarian == "no" & Eats.Meat == "no" & Dairy == "no" ~ "Vegan",
+                          Eats.Meat == "yes" & Vegetarian == "no" & Vegan == "no" ~ "Non-veg"))
+
+```
+
+Let's add another variable to define the individuals as case or control. Here we will use `stringr::str_replace_all()` to replace the two disease categories with "Case". 
+
+```{r}
+
+metadata_formatted <- metadata_formatted %>%
+  mutate(BMI_category = ifelse(test = BMI >= 25, yes = "Overweight", no = "Normal weight"),
+         Diet = case_when(Vegetarian == "yes" & Vegan == "no" & Eats.Meat == "no" ~ "Vegetarian",
+                          Vegan == "yes" & Vegetarian == "no" & Eats.Meat == "no" & Dairy == "no" ~ "Vegan",
+                          Eats.Meat == "yes" & Vegetarian == "no" & Vegan == "no" ~ "Non-veg"),
+         Disease = str_replace_all(Group, c("Mild" = "Case",
+                                            "Severe" = "Case")))
+
+```
+
+We should also make the medication information easier to use. Tidy data means having one variable per column and one value per cell. Here we have strings in each cell that sometimes contain more than one value. Let's clean that up.  
+
+First we need to identify the different values possible. We can use `stringr::str_split()` to separate the values in each cell. Luckily, the values here are all separated by a comma then a space. This makes it very easy to decide where to split the string.
+
+```{r}
+
+medications <- metadata_formatted$Medication %>%
+  str_split(pattern = ", ")
+
+```
+
+This separated the values into lists, but we want one vector of all unique possibilities.
+
+```{r}
+
+medications <- metadata_formatted$Medication %>%
+  str_split(pattern = ", ") %>%
+  unlist() %>%
+  unique()
+
+medications
+
+```
+
+There were many different medications or supplements reported in this study. One thing we can do is add a column to say whether the patients took any medication/supplements.  
+
+We can use pattern matching for this since we need to find three values for no ("NO", "NIL", "NONE"). Here is a useful cheat sheet for [regular expressions](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf).  
+
+Our pattern could be "starts with (`^`) `NO` or (`|`) `NIL`". Let's first check if that pattern returns only the three values we're interested in. `stringr::str_detect()` will return a logical vector that tells us whether each value contains a pattern matching the one given.
+
+```{r}
+
+str_detect(string = metadata_formatted$Medication, pattern = "^NO|NIL")
+
+```
+
+But we want to know which values are associated with `TRUE`. Remember we can subset a vector using a logical vector of the same length.
+
+```{r}
+
+metadata_formatted$Medication[str_detect(string = metadata_formatted$Medication, pattern = "^NO|NIL")] %>%
+  unique()
+
+```
+
+So now we can use `ifelse()` again and all the values matching our pattern will be `TRUE` so that we can replace them with a single value "NO". The values that don't match our pattern will be replaced with "YES". And all the `NA` values will stay `NA`.
+
+```{r}
+
+metadata_formatted <- metadata_formatted %>%
+  mutate(med_supp = ifelse(test = str_detect(string = Medication, pattern = "^NO|NIL"), 
+                           yes = "NO", 
+                           no = "YES"))
+
+```
+
+You can use this same approach to label patients that take asthma medication, etc.
+
+#### Combine data from multiple columns
+
+Another useful function is `tidyr::unite()`. Sometimes you will want to merge data from multiple columns. For example, let's say you want to analyze differences between groups from different treatment centers. We'll create a new column "group_center". Set the argument `remove = FALSE` to keep the original columns.
+
+```{r}
+
+metadata_formatted <- metadata_formatted %>%
+  unite(col = group_center, Group, Treatment_center, sep = "_", remove = FALSE)
+
+```
+
+FYI, the opposite of `tidyr::unite()` is `tidyr::separate()`.   
+
+### Summmarize data by groups
+
+Once your metadata is nice and tidy, you may want to have a description of the population. We can first group the data with `dplyr::group_by()` and then use `dplyr::summarise()` to make a summary of each group. For example, we can find the mean age of each group like this:
+
+```{r}
+
+metadata_summary <- metadata_formatted %>%
+  group_by(Group) %>%
+  summarise(mean_age = mean(Age))
+
+```
+
+Again, we can make multiple new columns at once. Let's also find the mean BMI, number of males, and number of females for each group.
+
+```{r}
+
+metadata_summary <- metadata_formatted %>%
+  group_by(Group) %>%
+  summarise(mean_age = mean(Age),
+            mean_BMI = mean(BMI),
+            n_females = sum(Gender == "Female"),
+            n_males = sum(Gender == "Male"))
+
+```
+
+```{r, echo=FALSE}
+
+metadata_summary
+
+```
+
+We can quickly check that our code produced the right results. Use the function `dplyr::filter()` to subset the rows for each group.
+
+```{r}
+
+df <- metadata_formatted %>%
+  filter(Group == "Control")
+mean(df$Age)
+
+df <- metadata_formatted %>%
+  filter(Group == "Mild")
+mean(df$Age)
+
+df <- metadata_formatted %>%
+  filter(Group == "Severe")
+mean(df$Age)
+
+```
+
+We already checked the gender distributions between groups earlier.
+
+```{r}
+
+table(metadata_formatted$Group, metadata_formatted$Gender)
+
+```
+
+We can also group the data by multiple variables. Add the variable "Treatment_center" to `group_by()`.
+
+```{r}
+
+metadata_summary <- metadata_formatted %>%
+  group_by(Group, Treatment_center) %>%
+  summarise(mean_age = mean(Age),
+            mean_BMI = mean(BMI, na.rm = TRUE),
+            n_females = sum(Gender == "Female"),
+            n_males = sum(Gender == "Male"))
+
+```
+
+```{r, echo=FALSE}
+
+metadata_summary
+
+```
+
+### Session info
+
+```{r, echo=FALSE}
+sessionInfo()
+```
+

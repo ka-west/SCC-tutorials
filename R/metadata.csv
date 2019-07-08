@@ -1,0 +1,151 @@
+PatientID,Group,Gender,Age,BMI,Ethnicity,Center,Smoker,Medication,Vegan,Vegetarian,Eats Meat,Dairy,Coffee,Average Exercise
+1,Control,Female,42,26.34,Other; Indian,Roseville,no,NO,no,no,yes,yes,no,1-2 days per week
+2,Control,Female,32,21.09,White/Caucasian,Roseville,no,PARACETAMOL,no,no,yes,yes,yes,none
+3,Severe,Female,44,22.15,White/Caucasian,Roseville,no,NA,no,no,yes,yes,yes,none
+4,Mild,Female,46,20.5,Latino/Hispanic; White/Caucasian,Roseville,no,"DAILY VITAMIN, IBUPROFEN",no,no,yes,no,no,less than 1 day per week
+5,Mild,Male,23,27.65,Latino/Hispanic; White/Caucasian,Roseville,yes,"DAILY VITAMIN, IBUPROFEN, RANITIDINE",no,no,yes,yes,yes,NA
+6,Severe,Male,35,20.19,White/Caucasian,Roseville,no,"DAILY VITAMIN, IBUPROFEN",no,no,yes,no,no,none
+7,Mild,Female,45,27.89,White/Caucasian,Roseville,no,NO,no,no,yes,yes,no,1-2 days per week
+8,Control,Male,36,22.29,White/Caucasian,Roseville,no,NA,no,no,yes,yes,no,3 or more days per week
+9,Severe,Male,33,22.78,Asian,Roseville,no,"FLUOXETINE, IBUPROFEN, DAILY VITAMIN",no,yes,no,yes,no,none
+10,Severe,Female,46,25.69,White/Caucasian,Roseville,no,"DAILY VITAMIN, OMEPRAZOLE, IBUPROFEN",yes,yes,yes,no,yes,none
+11,Control,Male,33,19.62,White/Caucasian,Roseville,yes,NO,no,no,yes,yes,yes,none
+12,Control,Male,39,Not recorded,Black/African American,Roseville,yes,DAILY VITAMIN,no,no,yes,yes,no,1-2 days per week
+13,Severe,Female,36,29.83,Black/African American,Roseville,no,NO,no,no,yes,yes,no,none
+14,Mild,Female,24,25.17,White/Caucasian,Roseville,no,ANTIHISTAMINE,no,no,yes,no,no,less than 1 day per week
+15,Control,Male,45,27.42,Other,Roseville,no,NA,no,no,yes,yes,yes,less than 1 day per week
+16,Control,Male,28,28.67,Other: Indian,Roseville,no,NO,yes,no,no,no,yes,3 or more days per week
+17,Control,Female,23,27.12,Other,Roseville,no,NA,no,no,yes,yes,yes,less than 1 day per week
+18,Control,Female,30,29.67,White/Caucasian,Roseville,no,NIL,no,no,yes,yes,yes,1-2 days per week
+19,Control,Male,46,19.03,Middle Eastern,Roseville,yes,IBUPROFEN,yes,no,no,no,yes,1-2 days per week
+20,Control,Female,45,28.81,White/Caucasian,Roseville,no,NO,no,no,yes,yes,yes,3 or more days per week
+21,Control,Male,40,28.37,Middle Eastern,Roseville,no,NO,no,no,yes,yes,yes,none
+22,Control,Female,38,27.35,Latino/Hispanic,Roseville,no,NA,no,no,yes,yes,no,1-2 days per week
+23,Severe,Male,47,22.81,Latino/Hispanic,Roseville,yes,NIL,no,no,yes,yes,no,none
+24,Mild,Female,39,19,Latino/Hispanic,Roseville,no,NA,yes,no,no,no,no,1-2 days per week
+25,Control,Female,40,22.67,White/Caucasian,Roseville,no,NO,yes,no,no,no,yes,3 or more days per week
+26,Control,Male,36,21.64,Latino/Hispanic,Roseville,yes,"DAILY VITAMIN, ASPIRIN",no,no,yes,yes,no,1-2 days per week
+27,Control,Male,37,28.2,Asian,Roseville,no,NA,yes,no,no,no,no,less than 1 day per week
+28,Severe,Female,29,22.65,White/Caucasian,Roseville,no,NO,no,no,yes,yes,yes,none
+29,Control,Female,25,21.99,White/Caucasian,Roseville,no,IBUPROFEN,yes,yes,no,no,yes,1-2 days per week
+30,Severe,Female,47,27.16,Latino/Hispanic; Other,Roseville,no,IBUPROFEN,no,no,yes,yes,no,none
+31,Control,Male,45,28.14,White/Caucasian,Roseville,no,"IBUPROFEN, OMEGA 3",no,no,yes,yes,yes,1-2 days per week
+32,Control,Female,39,23.74,White/Caucasian,Roseville,no,NA,no,no,yes,yes,yes,less than 1 day per week
+33,Control,Female,42,26.83,White/Caucasian,Roseville,no,NIL,no,no,yes,no,no,less than 1 day per week
+34,Control,Male,22,19.71,White/Caucasian,Roseville,no,NIL,no,yes,no,yes,no,NA
+35,Control,Female,34,21.03,Middle Eastern,Roseville,no,NA,no,no,yes,no,yes,3 or more days per week
+36,Control,Male,41,29.38,White/Caucasian,Roseville,no,"IBUPROFEN, OMEGA FISH OIL",no,yes,no,no,no,1-2 days per week
+37,Control,Male,27,27.08,Middle Eastern,Roseville,no,NO,no,yes,no,yes,no,1-2 days per week
+38,Control,Male,30,27.84,White/Caucasian,Roseville,no,NA,no,no,yes,yes,yes,none
+39,Control,Male,28,23.28,Asian,Roseville,no,NA,no,no,yes,no,yes,1-2 days per week
+40,Control,Female,25,25.28,White/Caucasian,Roseville,no,NIL,no,no,yes,yes,no,1-2 days per week
+41,Control,Male,32,27.62,Pacific Islander,Roseville,no,NIL,no,no,yes,no,yes,none
+42,Control,Male,32,28.64,Asian,Roseville,no,NO,no,no,yes,yes,no,less than 1 day per week
+43,Control,Female,31,22.91,White/Caucasian; Native Indian,Roseville,yes,IBUPROFEN,no,no,yes,yes,no,less than 1 day per week
+44,Control,Female,25,19.55,White/Caucasian; Native Indian,Roseville,no,MULTIVITAMINS,no,no,yes,yes,yes,1-2 days per week
+45,Control,Male,25,25.65,White/Caucasian,Roseville,no,MULTIVITAMINS,no,no,yes,yes,yes,3 or more days per week
+46,Control,Male,28,27.01,White/Caucasian,Roseville,no,NO,no,no,yes,yes,yes,none
+47,Control,Male,34,19.5,White/Caucasian,Roseville,no,IBUPROFEN,yes,yes,yes,no,yes,1-2 days per week
+48,Mild,Female,28,Not recorded,White/Caucasian,Roseville,no,NA,no,no,yes,yes,yes,less than 1 day per week
+49,Control,Female,44,25.52,Asian; Black/African American,Roseville,no,NIL,no,no,yes,no,yes,none
+50,Control,Female,23,27.09,Asian; Black/African American,Roseville,no,NO,no,no,yes,yes,yes,3 or more days per week
+51,Control,Male,33,28.96,White/Caucasian,Roseville,no,NA,no,no,yes,yes,yes,less than 1 day per week
+52,Control,Female,42,23.94,Latino/Hispanic,Roseville,no,"IBUPROFEN, DAILY VITAMIN, ASPIRIN",no,no,yes,no,yes,none
+53,Severe,Female,25,24.98,White/Caucasian,Roseville,no,"ASPIRIN, MULTIVITAMINS",no,no,yes,yes,yes,none
+54,Control,Male,36,26.91,Latino/Hispanic; White/Caucasian,Roseville,yes,NA,no,no,yes,yes,yes,1-2 days per week
+55,Control,Male,27,28.28,Latino/Hispanic; White/Caucasian,Roseville,no,NO,no,no,yes,yes,yes,3 or more days per week
+56,Control,Male,25,28.87,Latino/Hispanic; White/Caucasian,Roseville,no,NO,no,no,yes,yes,no,less than 1 day per week
+57,Control,Male,41,19.17,White/Caucasian,Roseville,no,MULTIVITAMINS,no,no,yes,yes,no,1-2 days per week
+58,Control,Female,45,24.25,White/Caucasian,Roseville,no,NA,no,no,yes,yes,yes,none
+59,Control,Male,31,22.51,Latino/Hispanic,Roseville,no,"DAILY VITAMIN, OMEGA 3, GAVISCON",no,no,yes,yes,yes,none
+60,Control,Female,39,28.15,White/Caucasian,Roseville,no,NIL,no,no,yes,yes,yes,1-2 days per week
+61,Control,Male,24,27.7,Other: Indian,Roseville,no,MULTIVITAMINS,no,no,yes,yes,yes,NA
+62,Control,Female,31,19.86,Latino/Hispanic,Roseville,no,"AMOXICILLIN, ASPIRIN, DAILY VITAMIN",no,no,yes,yes,no,less than 1 day per week
+63,Control,Female,29,26.64,Latino/Hispanic,Roseville,no,NA,no,no,yes,no,no,1-2 days per week
+64,Control,Male,43,21.2,White/Caucasian,Roseville,no,NIL,no,no,yes,yes,yes,3 or more days per week
+65,Control,Female,33,19.38,Other,Roseville,no,NO,no,no,yes,yes,yes,1-2 days per week
+66,Control,Male,43,29.17,White/Caucasian,Roseville,no,NO,no,yes,no,no,no,1-2 days per week
+67,Control,Female,43,20.31,Latino/Hispanic,Roseville,no,MULTIVITAMINS,no,no,yes,yes,no,1-2 days per week
+68,Control,Female,42,25.89,Latino/Hispanic,Roseville,no,NA,no,no,yes,yes,no,1-2 days per week
+69,Control,Male,33,20.5,Asian,Roseville,yes,NIL,no,no,yes,yes,no,less than 1 day per week
+70,Severe,Male,41,18.75,Latino/Hispanic; White/Caucasian,Roseville,no,NIL,no,no,yes,no,no,less than 1 day per week
+71,Control,Male,38,24.46,Asian; White/Caucasian,Roseville,yes,NO,no,no,yes,yes,yes,less than 1 day per week
+72,Severe,Male,40,19.51,Asian; White/Caucasian,Roseville,no,NA,no,yes,no,yes,no,none
+73,Control,Female,22,21.75,White/Caucasian,Roseville,no,IBUPROFEN,no,yes,no,yes,yes,1-2 days per week
+74,Control,Male,34,23.31,White/Caucasian,Roseville,no,NA,no,no,yes,yes,no,less than 1 day per week
+75,Control,Female,27,25.21,White/Caucasian,Richmond,no,NO,no,yes,no,yes,yes,less than 1 day per week
+76,Control,Female,31,27.71,White/Caucasian,Richmond,no,"CODEINE, PARACETAMOL",no,no,yes,yes,no,1-2 days per week
+77,Control,Male,37,20.82,Latin/Hispanic; White/Caucasian,Richmond,no,"IBUPROFEN, ASPIRIN, DAILY VITAMIN",no,no,yes,yes,no,less than 1 day per week
+78,Mild,Female,31,23.75,White/Caucasian,Richmond,no,NA,no,no,yes,yes,yes,less than 1 day per week
+79,Control,Male,24,23.62,White/Caucasian,Richmond,no,DAILY VITAMIN,no,no,yes,yes,no,less than 1 day per week
+80,Control,Male,28,26.88,White/Caucasian,Richmond,no,NA,yes,no,yes,no,yes,none
+81,Severe,Female,39,26.66,Latino/Hispanic,Richmond,no,NO,no,no,yes,yes,yes,none
+82,Mild,Female,32,27.98,Asian,Richmond,yes,NA,no,no,yes,no,no,less than 1 day per week
+83,Control,Female,42,28.61,Asian,Richmond,no,NO,no,yes,no,no,no,less than 1 day per week
+84,Mild,Male,24,29.37,White/Caucasian,Richmond,no,NA,no,no,yes,yes,no,less than 1 day per week
+85,Control,Male,33,24.79,White/Caucasian,Richmond,no,NO,no,no,yes,yes,yes,none
+86,Control,Female,47,24.47,Latino/Hispanic,Richmond,no,NA,no,no,yes,yes,yes,1-2 days per week
+87,Control,Female,45,20.47,Latino/Hispanic,Richmond,no,NIL,no,no,yes,yes,no,none
+88,Severe,Female,45,23.98,Asian,Richmond,no,"SALBUTAMOL, IBUPROFEN",no,no,yes,yes,yes,none
+89,Mild,Male,26,21.41,Asian,Richmond,no,IBUPROFEN,no,no,yes,no,yes,less than 1 day per week
+90,Mild,Male,25,18.98,Asian; White/Caucasian,Richmond,no,NA,no,no,yes,no,no,1-2 days per week
+91,Severe,Female,38,25.75,Asian; White/Caucasian,Richmond,no,IBUPROFEN,no,no,yes,yes,no,none
+92,Mild,Female,30,24.67,Latino/Hispanic,Richmond,no,"PARACETAMOL, B12, VIT D",no,no,yes,yes,yes,less than 1 day per week
+93,Severe,Female,39,20.12,Latino/Hispanic,Richmond,no,NA,no,no,yes,no,no,none
+94,Control,Male,30,21.75,White/Caucasian,Richmond,no,NA,no,no,yes,yes,no,less than 1 day per week
+95,Mild,Male,26,25.16,Asian,Richmond,no,"VIT D, OMEPRAZOLE",no,no,yes,yes,no,none
+96,Control,Female,42,20.4,Latino/Hispanic,Richmond,no,NA,no,no,yes,yes,yes,3 or more days per week
+97,Control,Male,24,19.62,Asian,Richmond,yes,NIL,no,no,yes,yes,no,less than 1 day per week
+98,Mild,Male,34,23.4,White/Caucasian,Richmond,no,NO,no,no,yes,no,no,1-2 days per week
+99,Mild,Female,35,22.57,White/Caucasian,Richmond,no,NO,no,no,yes,yes,yes,none
+100,Control,Male,37,28.14,Black/African American,Richmond,no,NA,yes,no,yes,no,yes,less than 1 day per week
+101,Control,Female,30,21.49,White/Caucasian,Richmond,no,NIL,no,no,yes,yes,no,1-2 days per week
+102,Control,Male,34,18.79,Asian,Richmond,no,NA,no,no,yes,yes,yes,less than 1 day per week
+103,Control,Male,46,28.34,Other,Richmond,no,SALBUTAMOL,no,no,yes,yes,no,1-2 days per week
+104,Control,Male,34,22.33,Asian,Richmond,no,DAILY VITAMIN,no,yes,no,yes,no,less than 1 day per week
+105,Severe,Female,45,25.71,Asian,Richmond,no,"THYROXINE, ASPIRIN, DAILY VITAMIN",no,no,yes,yes,no,none
+106,Control,Female,45,24.74,Asian,Richmond,no,VITAMIN D,no,yes,no,yes,yes,less than 1 day per week
+107,Control,Male,37,22.81,Black/African American,Richmond,no,NIL,no,no,yes,no,no,less than 1 day per week
+108,Control,Male,32,20.64,Black/African American,Richmond,no,IBUPROFEN,no,no,yes,yes,no,1-2 days per week
+109,Control,Female,25,23.41,White/Caucasian,Richmond,no,ASPIRIN,no,yes,no,yes,yes,less than 1 day per week
+110,Control,Male,46,25.7,White/Caucasian,Richmond,no,NA,no,yes,yes,yes,no,less than 1 day per week
+111,Control,Female,29,24.45,Pacific Islander; White/Caucasian,Richmond,no,NA,no,no,yes,no,yes,1-2 days per week
+112,Control,Male,23,26.03,Latino/Hispanic,Richmond,yes,DAILY VITAMIN,no,no,yes,no,yes,none
+113,Control,Male,46,26.83,Asian,Richmond,no,NA,no,no,yes,yes,no,3 or more days per week
+114,Control,Female,40,24.07,White/Caucasian,Richmond,no,OMEPRAZOLE,no,no,yes,yes,no,1-2 days per week
+115,Control,Female,25,22.9,Asian,Richmond,no,NO,no,no,yes,no,yes,none
+116,Mild,Female,36,18.6,Asian,Richmond,no,"AMOXICILLIN, MULTIVITAMINS",no,no,yes,no,yes,less than 1 day per week
+117,Mild,Female,46,18.57,White/Caucasian,Richmond,no,"ASPIRIN, IBUPROFEN, DAILY VITAMIN",no,no,yes,yes,yes,less than 1 day per week
+118,Control,Male,37,29.85,Pacific Islander; White/Caucasian,Richmond,no,NA,no,no,yes,yes,no,less than 1 day per week
+119,Control,Male,32,19.75,Latino/Hispanic; White/Caucasian,Richmond,no,ASPIRIN,no,yes,no,no,no,less than 1 day per week
+120,Severe,Male,38,23.29,Latino/Hispanic; White/Caucasian,Richmond,no,"IBUPROFEN, SYMBICORT, SERTRALINE",no,yes,no,yes,no,none
+121,Control,Female,30,26.69,Black/African American; Native American; White/Caucasian,Richmond,no,NA,no,no,yes,yes,no,less than 1 day per week
+122,Control,Male,30,26.98,Black/African American; Native American; White/Caucasian,Richmond,no,FLUOXETINE,no,no,yes,yes,yes,less than 1 day per week
+123,Control,Female,27,28.45,Black/African American; Native American; White/Caucasian,Richmond,yes,NIL,no,no,yes,yes,no,less than 1 day per week
+124,Control,Male,31,25.44,White/Caucasian,Richmond,no,NO,no,no,yes,yes,yes,1-2 days per week
+125,Control,Male,47,27.13,White/Caucasian,Richmond,no,NO,no,no,yes,no,yes,1-2 days per week
+126,Severe,Female,26,28.17,Latino/Hispanic,Richmond,no,ANTIHISTAMINE,no,no,yes,yes,no,none
+127,Control,Female,24,25.5,Latino/Hispanic,Richmond,no,VITAMIN D,no,no,yes,yes,no,1-2 days per week
+128,Control,Male,25,27.55,Asian; Latino/Hispanic,Richmond,no,NO,no,yes,no,no,no,1-2 days per week
+129,Control,Male,39,18.79,Latino/Hispanic,Richmond,no,ANTIHISTAMINE,no,no,yes,yes,yes,1-2 days per week
+130,Control,Male,38,23.27,White/Caucasian,Richmond,no,NIL,no,no,yes,yes,no,1-2 days per week
+131,Control,Female,45,28.48,White/Caucasian,Richmond,no,NIL,no,yes,no,yes,no,1-2 days per week
+132,Mild,Female,39,25.89,White/Caucasian,Richmond,no,NA,yes,no,no,no,yes,none
+133,Control,Male,41,29.05,White/Caucasian,Richmond,no,NIL,no,yes,no,no,no,1-2 days per week
+134,Control,Female,35,20.48,White/Caucasian,Richmond,yes,ASPIRIN,no,no,yes,yes,no,none
+135,Control,Female,39,22.12,White/Caucasian,Richmond,no,IBUPROFEN,no,no,yes,no,no,1-2 days per week
+136,Control,Female,43,27.68,Latino/Hispanic,Richmond,no,NO,no,no,yes,yes,yes,none
+137,Mild,Female,42,29.78,Latino/Hispanic,Richmond,no,"IBUPROFEN, SALBUTAMOL",no,no,yes,yes,yes,less than 1 day per week
+138,Control,Male,47,22.19,Asian; Other: Indian,Richmond,no,NA,no,no,yes,yes,yes,3 or more days per week
+139,Severe,Female,33,18.54,Asian; Other: Indian,Richmond,no,"DAILY VITAMIN, IBUPROFEN",no,yes,no,yes,no,none
+140,Mild,Female,30,29.82,White/Caucasian,Richmond,no,NO,no,no,yes,yes,yes,1-2 days per week
+141,Severe,Male,32,20.21,White/Caucasian,Richmond,no,"ASPIRIN, CODEINE, PARACETAMOL",no,no,yes,yes,no,none
+142,Control,Male,22,19.09,White/Caucasian,Richmond,no,DAILY VITAMIN,no,no,yes,yes,no,less than 1 day per week
+143,Control,Male,26,25.32,Black/African American,Richmond,no,NONE,no,no,yes,yes,yes,1-2 days per week
+144,Control,Male,43,22.18,Black/African American,Richmond,no,VITAMIN D,no,no,yes,no,no,3 or more days per week
+145,Control,Female,28,24.53,Asian; Other: Indian South Asian,Richmond,no,IBUPROFEN,no,no,yes,yes,yes,less than 1 day per week
+146,Control,Male,28,27.58,Asian; Other: Indian South Asian,Richmond,yes,NO,no,no,yes,yes,no,3 or more days per week
+147,Control,Female,23,19.31,White/Caucasian,Richmond,no,ASPIRIN,no,no,yes,yes,no,3 or more days per week
+148,Control,Female,28,26.43,White/Caucasian,Richmond,no,"SERTRALINE, SALBUTAMOL, MULTIVITAMINS",no,no,yes,no,no,3 or more days per week
+149,Control,Female,41,29.32,White/Caucasian,Richmond,no,NO,no,no,yes,no,yes,none
+150,Control,Male,44,21.69,White/Caucasian,Richmond,no,ANTIHISTAMINE,yes,no,no,no,yes,less than 1 day per week
