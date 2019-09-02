@@ -234,7 +234,7 @@ Calculate alpha-diversities
 
 alpha_div <- ps_rar %>%
   estimate_richness(split = T, 
-                    measures = c("Observed", "Shannon", "Simpson", "Chao1", "Fisher")) %>%
+                    measures = c("Observed", "Shannon", "Simpson", "Fisher")) %>%
   mutate(X.SampleID = as.numeric(sample_names(ps_rar))) # add sample IDs
   
 alpha_div <- right_join(ps_meta, # add metadata
@@ -248,7 +248,7 @@ Plot the results
 ```{r}
 
 alpha_div_long <- melt(alpha_div, 
-                       measure.vars = c("Observed", "Shannon", "Simpson", "Chao1", "se.chao1", "Fisher"))
+                       measure.vars = c("Observed", "Shannon", "Simpson", "Fisher"))
 
 ggboxplot(alpha_div_long,
           x = "variable",
